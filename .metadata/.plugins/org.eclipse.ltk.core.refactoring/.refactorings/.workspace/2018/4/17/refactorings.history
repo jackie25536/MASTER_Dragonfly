@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;Dragonfly/Dragonfly.h&apos;" deleteContents="false" description="Delete resource &apos;Dragonfly/Dragonfly.h&apos;" element1="/Dragonfly/Dragonfly.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1524366111387"/>&#x0A;<refactoring comment="Delete resource &apos;Dragonfly/varlist.c&apos;" deleteContents="false" description="Delete resource &apos;Dragonfly/varlist.c&apos;" element1="/Dragonfly/varlist.c" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1524390897157"/>
+</session>

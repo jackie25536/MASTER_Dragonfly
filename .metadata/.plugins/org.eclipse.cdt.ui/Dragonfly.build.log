@@ -1,0 +1,23 @@
+
+**** Build of configuration CPU1_RAM for project Dragonfly ****
+
+"D:\\CCS8\\ti\\ccsv8\\utils\\bin\\gmake" -k all 
+ 
+Building file: "../ADC.c"
+Invoking: C2000 Compiler
+"D:/CCS8/ti/ccsv8/tools/compiler/ti-cgt-c2000_18.1.1.LTS/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 --include_path="D:/FIRM/Include Files/ti-cgt-c2000_18.1.1.LTS/include" --include_path="D:/FIRM/Include Files/ti-cgt-c2000_15.12.7.LTS/include" --include_path="D:/FIRM/Include Files/F2837xD_common/include" --include_path="D:/FIRM/Include Files/F2837xD_headers/include" --advice:performance=all --define=CPU1 -g --diag_suppress=10063 --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="ADC.d_raw"  "../ADC.c"
+Finished building: "../ADC.c"
+ 
+Building file: "../Dragonfly.c"
+Invoking: C2000 Compiler
+"D:/CCS8/ti/ccsv8/tools/compiler/ti-cgt-c2000_18.1.1.LTS/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 --include_path="D:/FIRM/Include Files/ti-cgt-c2000_18.1.1.LTS/include" --include_path="D:/FIRM/Include Files/ti-cgt-c2000_15.12.7.LTS/include" --include_path="D:/FIRM/Include Files/F2837xD_common/include" --include_path="D:/FIRM/Include Files/F2837xD_headers/include" --advice:performance=all --define=CPU1 -g --diag_suppress=10063 --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="Dragonfly.d_raw"  "../Dragonfly.c"
+Finished building: "../Dragonfly.c"
+ 
+Building target: "Dragonfly.out"
+Invoking: C2000 Linker
+"D:/CCS8/ti/ccsv8/tools/compiler/ti-cgt-c2000_18.1.1.LTS/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 --advice:performance=all --define=CPU1 -g --diag_suppress=10063 --diag_warning=225 --display_error_number -z -m"Dragonfly.map" --stack_size=0x100 --warn_sections -i"D:/CCS8/ti/ccsv8/tools/compiler/ti-cgt-c2000_18.1.1.LTS/lib" -i"D:/CCS8/ti/ccsv8/tools/compiler/ti-cgt-c2000_18.1.1.LTS/include" -i"D:/TI/controlSUITE/device_support/F2837xD/v210/F2837xD_common/cmd" -i"D:/TI/controlSUITE/device_support/F2837xD/v210/F2837xD_headers/cmd" --reread_libs --display_error_number --xml_link_info="Dragonfly_linkInfo.xml" --entry_point=code_start --rom_model -o "Dragonfly.out" "./ADC.obj" "./DAC.obj" "./Dragonfly.obj" "./F28379D_GPIO.obj" "./F28379D_PWM.obj" "./F2837xD_CodeStartBranch.obj" "./F2837xD_DefaultISR.obj" "./F2837xD_EPwm.obj" "./F2837xD_GlobalVariableDefs.obj" "./F2837xD_Gpio.obj" "./F2837xD_Ipc.obj" "./F2837xD_PieCtrl.obj" "./F2837xD_PieVect.obj" "./F2837xD_SysCtrl.obj" "./F2837xD_usDelay.obj" "./alg.obj"  -lrts2800_fpu32.lib -l2837xD_RAM_lnk_cpu1.cmd -lF2837xD_Headers_nonBIOS_cpu1.cmd -llibc.a 
+<Linking>
+Finished building target: "Dragonfly.out"
+ 
+
+**** Build Finished ****

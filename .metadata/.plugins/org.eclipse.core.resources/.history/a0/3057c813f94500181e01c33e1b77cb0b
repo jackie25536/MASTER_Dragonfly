@@ -1,0 +1,32 @@
+/*
+ * F28379D_GPIO.c
+ *
+ *  Created on: 2018.04.22
+ *      Author: Chun-Yi Kuo
+ */
+
+
+#include "F2837xD_device.h"        // F2837xD Headerfile Include File
+
+//===========================================================================================
+//Dragonfly GPIO's
+//       Signal name        Type        Func. module        Schematic. Name.
+// Refer Dragonfly GPIO setting.xslx
+
+
+void Setup_GPIO(void)
+{
+    EALLOW;
+    //--------------------------------------------------------------------------------------
+    //  GPIO-00 - PIN FUNCTION = --Spare--
+        GpioCtrlRegs.GPAMUX1.bit.GPIO0 = 0;     // 0=GPIO, 1=EPWM1A, 2=Resv, 3=Resv
+    //  GpioCtrlRegs.GPADIR.bit.GPIO0 = 0;      // 1=OUTput,  0=INput
+    //  GpioDataRegs.GPACLEAR.bit.GPIO0 = 1;    // uncomment if --> Set Low initially
+    //  GpioDataRegs.GPASET.bit.GPIO0 = 1;      // uncomment if --> Set High initially
+
+
+
+
+
+    EDIS;
+}

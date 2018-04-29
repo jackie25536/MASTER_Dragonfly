@@ -1,0 +1,20 @@
+/*
+ * alg.h
+ *
+ *  Created on: 2018.04.22
+ *      Author: Chun-Yi Kuo
+ */
+
+#ifndef ALG_H_
+#define ALG_H_
+#include "Dragonfly.h"
+
+
+typedef struct
+{
+    Uint32 spare_min;
+}FIXVAR;
+
+
+
+#endif /* ALG_H_ */

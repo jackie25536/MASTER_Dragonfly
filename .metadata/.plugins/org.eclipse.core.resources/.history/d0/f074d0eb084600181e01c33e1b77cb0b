@@ -1,0 +1,33 @@
+/*
+ * F28379D_PWM.c
+ *
+ *  Created on: 2018.04.22
+ *      Author: Chun-Yi Kuo
+ */
+
+#include "F2837xD_device.h"        // F2837xD Headerfile Include File
+
+void Setup_PWM_GPIO(void)
+{
+    EALLOW;
+    //--------------------------------------------------------------------------------------
+    //  GPIO-145 - PIN FUNCTION = --EPWM1A (O)--
+        GpioCtrlRegs.GPEPUD.bit.GPIO145     = 1;     // 0=Enables the Pull-Up, 1=Disables the Pull-Up
+        GpioCtrlRegs.GPEQSEL2.bit.GPIO145   = 0;     // 0=Sync, 1=Qualification(3 Samples), 2=Qualification(6 Samples), 3=Async(no Sync or Qualification))
+        GpioCtrlRegs.GPEGMUX2.bit.GPIO145   = 0;     // Option 1 EPWM1A(Output)
+        GpioCtrlRegs.GPEMUX2.bit.GPIO145    = 1;     // Option 1 EPWM1A(Output)
+        GpioCtrlRegs.GPEDIR.bit.GPIO145     = 0;     // 0=INput, 1=OUTput
+
+
+
+    EDIS;
+}
+
+void Config_PWM(void)
+{
+    EALLOW;
+
+
+
+    EDIS;
+}

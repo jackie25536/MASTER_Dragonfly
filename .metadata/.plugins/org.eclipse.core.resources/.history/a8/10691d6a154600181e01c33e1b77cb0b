@@ -1,0 +1,137 @@
+/*
+ * F28379D_PWM.c
+ *
+ *  Created on: 2018.04.22
+ *      Author: Chun-Yi Kuo
+ */
+
+#include "F2837xD_device.h"        // F2837xD Headerfile Include File
+#include "F2837xD_EPwm_defines.h"
+#include "varlist.h"
+
+
+void Setup_PWM_GPIO(void)
+{
+    EALLOW;
+    //--------------------------------------------------------------------------------------
+    //  GPIO-145 - PIN FUNCTION = EPWM1A (O) - PWM_UH
+    GpioCtrlRegs.GPEPUD.bit.GPIO145     = 1;     // 0=Enables the Pull-Up, 1=Disables the Pull-Up
+    GpioCtrlRegs.GPEQSEL2.bit.GPIO145   = 0;     // 0=Sync, 1=Qualification(3 Samples), 2=Qualification(6 Samples), 3=Async(no Sync or Qualification))
+    GpioCtrlRegs.GPEGMUX2.bit.GPIO145   = 0;     // Option 1 EPWM1A(Output)
+    GpioCtrlRegs.GPEMUX2.bit.GPIO145    = 1;     // Option 1 EPWM1A(Output)
+    GpioCtrlRegs.GPEDIR.bit.GPIO145     = 0;     // 0=INput, 1=OUTput
+    //--------------------------------------------------------------------------------------
+    //  GPIO-146 - PIN FUNCTION = EPWM1B (O) - PWM_UL
+    GpioCtrlRegs.GPEPUD.bit.GPIO146     = 1;     // 0=Enables the Pull-Up, 1=Disables the Pull-Up
+    GpioCtrlRegs.GPEQSEL2.bit.GPIO146   = 0;     // 0=Sync, 1=Qualification(3 Samples), 2=Qualification(6 Samples), 3=Async(no Sync or Qualification))
+    GpioCtrlRegs.GPEGMUX2.bit.GPIO146   = 0;     // Option 1 EPWM1B(Output)
+    GpioCtrlRegs.GPEMUX2.bit.GPIO146    = 1;     // Option 1 EPWM1B(Output)
+    GpioCtrlRegs.GPEDIR.bit.GPIO146     = 0;     // 0=INput, 1=OUTput
+
+    //--------------------------------------------------------------------------------------
+    //  GPIO-147 - PIN FUNCTION = EPWM2A (O) - PWM_VH
+    GpioCtrlRegs.GPEPUD.bit.GPIO147     = 1;     // 0=Enables the Pull-Up, 1=Disables the Pull-Up
+    GpioCtrlRegs.GPEQSEL2.bit.GPIO147   = 0;     // 0=Sync, 1=Qualification(3 Samples), 2=Qualification(6 Samples), 3=Async(no Sync or Qualification))
+    GpioCtrlRegs.GPEGMUX2.bit.GPIO147   = 0;     // Option 1 EPWM2A(Output)
+    GpioCtrlRegs.GPEMUX2.bit.GPIO147    = 1;     // Option 1 EPWM2A(Output)
+    GpioCtrlRegs.GPEDIR.bit.GPIO147     = 0;     // 0=INput, 1=OUTput
+    //--------------------------------------------------------------------------------------
+    //  GPIO-148 - PIN FUNCTION = EPWM2B (O) - PWM_VL
+    GpioCtrlRegs.GPEPUD.bit.GPIO148     = 1;     // 0=Enables the Pull-Up, 1=Disables the Pull-Up
+    GpioCtrlRegs.GPEQSEL2.bit.GPIO148   = 0;     // 0=Sync, 1=Qualification(3 Samples), 2=Qualification(6 Samples), 3=Async(no Sync or Qualification))
+    GpioCtrlRegs.GPEGMUX2.bit.GPIO148   = 0;     // Option 1 EPWM2B(Output)
+    GpioCtrlRegs.GPEMUX2.bit.GPIO148    = 1;     // Option 1 EPWM2B(Output)
+    GpioCtrlRegs.GPEDIR.bit.GPIO148     = 0;     // 0=INput, 1=OUTput
+
+    //--------------------------------------------------------------------------------------
+    //  GPIO-149 - PIN FUNCTION = EPWM3A (O) - PWM_WH
+    GpioCtrlRegs.GPEPUD.bit.GPIO149     = 1;     // 0=Enables the Pull-Up, 1=Disables the Pull-Up
+    GpioCtrlRegs.GPEQSEL2.bit.GPIO149   = 0;     // 0=Sync, 1=Qualification(3 Samples), 2=Qualification(6 Samples), 3=Async(no Sync or Qualification))
+    GpioCtrlRegs.GPEGMUX2.bit.GPIO149   = 0;     // Option 1 EPWM3A(Output)
+    GpioCtrlRegs.GPEMUX2.bit.GPIO149    = 1;     // Option 1 EPWM3A(Output)
+    GpioCtrlRegs.GPEDIR.bit.GPIO149     = 0;     // 0=INput, 1=OUTput
+    //--------------------------------------------------------------------------------------
+    //  GPIO-150 - PIN FUNCTION = EPWM3B (O) - PWM_WL
+    GpioCtrlRegs.GPEPUD.bit.GPIO150     = 1;     // 0=Enables the Pull-Up, 1=Disables the Pull-Up
+    GpioCtrlRegs.GPEQSEL2.bit.GPIO150   = 0;     // 0=Sync, 1=Qualification(3 Samples), 2=Qualification(6 Samples), 3=Async(no Sync or Qualification))
+    GpioCtrlRegs.GPEGMUX2.bit.GPIO150   = 0;     // Option 1 EPWM3B(Output)
+    GpioCtrlRegs.GPEMUX2.bit.GPIO150    = 1;     // Option 1 EPWM3B(Output)
+    GpioCtrlRegs.GPEDIR.bit.GPIO150     = 0;     // 0=INput, 1=OUTput    
+    EDIS;
+}
+
+void Config_PWM(void)
+{
+
+    EALLOW;
+    CpuSysRegs.PCLKCR2.bit.EPWM1 = 1;         // Enable PWM1 Clock
+    CpuSysRegs.PCLKCR2.bit.EPWM2 = 1;         // Enable PWM2 Clock
+    CpuSysRegs.PCLKCR2.bit.EPWM3 = 1;         // Enable PWM3 Clock
+
+    CpuSysRegs.PCLKCR0.bit.HRPWM = 0;         // HRPWM Clock enable (Check意思)
+    CpuSysRegs.PCLKCR0.bit.TBCLKSYNC =0;      // EPWM Time Base Clock sync (Check意思)
+
+    //Not yet
+    //EPWM setting start
+    // EPWM period等等設定放在這
+
+    //=====Time-Base (TB) Submodule Setting=====//
+    EPwm1Regs.TBCTL.bit.CLKDIV = TB_DIV1;
+    EPwm1Regs.TBCTL.bit.HSPCLKDIV = TB_DIV1;        // TBCLK = SYSCLKOUT // default counts down after sync event
+
+    EPwm1Regs.TBCTL.bit.PRDLD = TB_IMMEDIATE;
+
+
+    EPwm1Regs.TBPRD = CLKPERHASE;                   // Set timer period
+    EPwm1Regs.TBCTR = 0x0000;                       // Clear counter
+    EPwm1Regs.TBCTL.bit.PHSDIR =TB_DOWN;            // TB_UP; //TB_DOWN; //after sync count up
+    EPwm1Regs.TBPHS.bit.TBPHS = 0x0000;             // Phase is 0
+    EPwm1Regs.TBCTL.bit.CTRMODE = TB_COUNT_UPDOWN;  // Symmetric
+    EPwm1Regs.TBCTL.bit.PHSEN = TB_DISABLE;         // Disable phase loading
+    EPwm1Regs.TBCTL.bit.SYNCOSEL = TB_CTR_ZERO;     // TB_SYNC_IN;//TB_CTR_ZERO;//on ZERO EPwm1Regssync
+
+
+
+
+
+
+    EPwm1Regs.CMPCTL.bit.SHDWAMODE = CC_SHADOW;    // Load registers every ZERO
+    EPwm1Regs.CMPCTL.bit.SHDWBMODE = CC_SHADOW;
+    EPwm1Regs.CMPCTL.bit.LOADAMODE = CC_CTR_ZERO;
+    EPwm1Regs.CMPCTL.bit.LOADBMODE = CC_CTR_ZERO;
+
+    //
+    // Setup compare
+    //
+    EPwm1Regs.CMPA.bit.CMPA = 3000;
+
+    //
+    // Set actions
+    //
+    EPwm1Regs.AQCTLA.bit.CAU = AQ_SET;            // Set PWM1A on Zero
+    EPwm1Regs.AQCTLA.bit.CAD = AQ_CLEAR;
+
+    EPwm1Regs.AQCTLB.bit.CAU = AQ_CLEAR;          // Set PWM1A on Zero
+    EPwm1Regs.AQCTLB.bit.CAD = AQ_SET;
+
+    //
+    // Active Low PWMs - Setup Deadband
+    //
+    EPwm1Regs.DBCTL.bit.OUT_MODE = DB_FULL_ENABLE;
+    EPwm1Regs.DBCTL.bit.POLSEL = DB_ACTV_LO;
+    EPwm1Regs.DBCTL.bit.IN_MODE = DBA_ALL;
+    EPwm1Regs.DBRED.bit.DBRED = EPWM1_MIN_DB;
+    EPwm1Regs.DBFED.bit.DBFED = EPWM1_MIN_DB;
+    EPwm1_DB_Direction = DB_UP;
+
+    //
+    // Interrupt where we will change the Deadband
+    //
+    EPwm1Regs.ETSEL.bit.INTSEL = ET_CTR_ZERO;    // Select INT on Zero event
+    EPwm1Regs.ETSEL.bit.INTEN = 1;               // Enable INT
+    EPwm1Regs.ETPS.bit.INTPRD = ET_3RD;          // Generate INT on 3rd event
+
+    //EPWM setting end
+    CpuSysRegs.PCLKCR0.bit.TBCLKSYNC = 1;    // EPWM Time Base Clock sync
+    EDIS;
+}

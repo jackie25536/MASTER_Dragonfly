@@ -1,0 +1,15 @@
+/*
+ * varlist.h
+ *
+ *  Created on: 2018.04.22
+ *      Author: Chun-Yi Kuo
+ */
+
+#ifndef VARLIST_H_
+#define VARLIST_H_
+
+#define CLKPERHASE 200000000/32000
+
+
+
+#endif /* VARLIST_H_ */

@@ -1,0 +1,114 @@
+{
+      "softwareName": "C2000-CGT-15",
+      "softwareVersion": "15.12.2.LTS",
+      "technicalOwner": "a0321546",
+      "publisher": "a0321546",
+      "publisherProductGroup": "C2000 CGT",
+      "status": "published",
+      "buildDate": "1461823200",
+      "supportContactURL": "http://e2e.ti.com/support/development_tools/compiler/",
+      "supportContactURLText": "Please click here for support",
+      "releaseNotesIdentifier": "http://software-dl.ti.com/codegen/esd/cgt_public_sw/C2000/15.12.2.LTS/readme.txt",
+      "legacyVersionURL": null,
+      "legacyVersionNumber": null,
+      "legacyVersionDate": null,
+      "releaseFSLocation": "/www-dl/server-root/codegen/esd/cgt_public_sw/C2000/15.12.2.LTS/",
+      "releaseInformation": [
+        {
+          "releaseInfoType": "General",
+          "content": "This is a maintenance update release for the C2000 Code Generation Tools (CGT). The C2000 CGT provides software development tools including the compiler, assembler, and linker, among others, which can be used to develop applications with C/C++ source code for loading and running on C2000 core processors."
+        }, {
+		"releaseInfoType": "Whats New",
+		"content": "New features available in C2000 Code Generation Tools starting with release v15.12.0.LTS:<ul><li>DWARF 4</li><li>Aggregate Data in Subsections</li><li>New Object File Display option to display stack usage information</li><li>Additional boot hook functions</li><li>Unsigned Integer Division Intrinsics</li><li>Byte Peripherals Support</li><li>CLA-only Object File Compatibility</li><li>GCC Commmon Symbol Bug Workaround</li><li>Improvements to Support Placing/Running Functions in RAM</li><li>Improved Code Generation of 32x32=>64 Multiplies</li><li>New --cla_default Option - treats .c files as CLA source files</li><li>Removed Language Constraints from CLA Compiler</li><li>_Bool Type Support for CLA</li><li>EALLOW, EDIS Intrinsics</li><li>Module Summary in Linker Map File</li><li>Updated RTS Source</li><li>Math Library Improvements</li><li>Aliased Memory Ranges</li></ul>"
+	} 
+      ],
+      "assets": [
+        {
+          "assetDisplayTitle": "Windows Installer for C2000 CGT",
+          "assetVersion": "15.12.2.LTS",
+          "assetDescription": "Windows Installer for C2000 CGT",
+          "assetURLLocation": "http://software-dl.ti.com/codegen/esd/cgt_public_sw/C2000/15.12.2.LTS/ti_cgt_c2000_15.12.2.LTS_windows_installer.exe",
+          "mimeType": "application",
+          "fileSize": 21477551,
+          "assetType": "Software",
+          "assetTypeOther": null,
+          "SRASApprovalID": "SRAS00001958",
+          "displayConfig":[
+           {
+             "configKey": "divider.title",
+             "configValue": "C2000 CGT Installers"
+           }
+           ]
+        },
+        {
+          "assetDisplayTitle": "MacOS Installer for C2000 CGT",
+          "assetVersion": "15.12.2.LTS",
+          "assetDescription": "MacOS Installer for C2000 CGT",
+          "assetURLLocation": "http://software-dl.ti.com/codegen/esd/cgt_public_sw/C2000/15.12.2.LTS/ti_cgt_c2000_15.12.2.LTS_osx_installer.app.zip",
+          "mimeType": "application",
+          "fileSize": 223486625,
+          "assetType": "Software",
+          "assetTypeOther": null,
+          "SRASApprovalID": "SRAS00001958"
+        },
+        {
+          "assetDisplayTitle": "Linux Installer for C2000 CGT",
+          "assetVersion": "15.12.2.LTS",
+          "assetDescription": "Linux Installer for C2000 CGT",
+          "assetURLLocation": "http://software-dl.ti.com/codegen/esd/cgt_public_sw/C2000/15.12.2.LTS/ti_cgt_c2000_15.12.2.LTS_linux_installer_x86.bin",
+          "mimeType": "application",
+          "fileSize": 20820043,
+          "assetType": "Software",
+          "assetTypeOther": null,
+          "SRASApprovalID": "SRAS00001958"
+        },
+        {
+          "assetDisplayTitle": "C2000 Compiler User Guide",
+          "assetVersion": "15.12.0.LTS",
+          "assetDescription": "C2000 Compiler User Guide",
+          "assetURLLocation": "http://software-dl.ti.com/docs/esd/SPRU514J/index.html",
+          "fileSize": 0,
+          "assetType": "Documentation",
+          "assetTypeOther": null,
+          "SRASApprovalID": "NONE",
+          "displayConfig":[
+           {
+             "configKey": "divider.title",
+             "configValue": "C2000 CGT Documentation"
+           }
+           ]
+        },
+        {
+          "assetDisplayTitle": "C2000 Assembly Language Tools User Guide",
+          "assetVersion": "15.12.0.LTS",
+          "assetDescription": "C2000 Assembly Language Tools User Guide",
+          "assetURLLocation": "http://software-dl.ti.com/docs/esd/SPRU513J/index.html",
+          "fileSize": 0,
+          "assetType": "Documentation",
+          "assetTypeOther": null,
+          "SRASApprovalID": "NONE"
+        },
+        {
+          "assetDisplayTitle": "C2000 CGT - Defect History",
+          "assetVersion": "15.12.2.LTS",
+          "assetDescription": "C2000 CGT - Defect History",
+          "assetURLLocation": "http://software-dl.ti.com/codegen/esd/cgt_public_sw/C2000/15.12.2.LTS/DefectHistory.txt",
+          "fileSize": 0,
+          "assetType": "Documentation",
+          "assetTypeOther": null,
+          "SRASApprovalID": "NONE",
+          "displayConfig":[
+           {
+             "configKey": "divider.title",
+             "configValue": "C2000 CGT Defect History"
+           }
+           ]
+        }
+      ],
+      "softwareSupportedEntities": [
+        {
+          "supportedEntityType": "platform",
+          "supportedEntityData": "C2000"
+        }
+      ]
+   }

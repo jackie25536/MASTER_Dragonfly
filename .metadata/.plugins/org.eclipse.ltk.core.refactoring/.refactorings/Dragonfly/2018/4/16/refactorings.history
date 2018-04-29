@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Dragonfly/epwm_deadband_cpu01.c&apos; to &apos;Dragonfly.c&apos;" description="Rename resource &apos;epwm_deadband_cpu01.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="epwm_deadband_cpu01.c" name="Dragonfly.c" stamp="1523812359535" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Dragonfly/epwm_deadband_cpu01.c&apos; to &apos;Dragonfly.c&apos;" description="Rename resource &apos;epwm_deadband_cpu01.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="epwm_deadband_cpu01.c" name="Dragonfly.c" stamp="1523812410184" updateReferences="true"/>
+</session>
